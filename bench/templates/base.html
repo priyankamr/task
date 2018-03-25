@@ -1,0 +1,143 @@
+ {% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Companies</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="{% static '/css/bench.css' %}" rel='stylesheet' type='text/css'>
+
+
+</head>
+<body>
+
+<header>
+<div class="frame">
+    <a href="/" class="logo">ICObench</a>
+    <div id="hamburger"></div>
+        <a onclick="ga('send', 'event', 'Changelly');" href="https://changelly.com/?utm_source=icobench" target="_blank" class="changelly">
+                          Change instantly
+        <span>* ads</span>
+        </a>
+        <nav id="top_menu">
+            <a href="{% url 'company_list' %}" title="Browse ICOs" class="link">ICOs</a>
+            <a href="/benchy" target="_blank" title="Benchy the ICO bot" class="link">Benchy</a>
+            <a href="/people" title="People of Blockchain" class="link">People</a>
+            <a href="/publish" title="Publish your ICO" class="link">Publish ICO</a>
+            <div class="link">
+                <a href="/register" title="Register">Register</a> / <a href="/login" title="Login">Login</a>
+    </div>
+    </nav>
+    </div>
+    </header>
+
+{% block content %}
+{% endblock content %}
+<!--Footer-->
+<footer>
+<!--                         <div class="container-fluid">
+ -->
+                        <div class="navigation container"><div class="frame">
+                        <div class="container">
+
+                        <div class="col_5">
+                            <h4>ICObench</h4>
+                            <ul>
+                                <li><a href="/stats" title="Stats and Facts">Stats &amp; Facts</a></li>
+                                <li><a href="/media" title="Media">Media</a></li>
+                                <li><a href="/developers" title="API for developers">API</a></li>
+                                <li><a href="https://play.google.com/store/apps/details?id=com.icobench" target="_blank" title="Mobile App (Android)">Mobile App (Android)</a></li>
+                                <li><a href="https://chrome.google.com/webstore/detail/icobench/conlmgedncnhebjciedplohddpnkegch" target="_blank" title="ICObench Chrome Widget">Chrome Widget</a></li>
+                                <li><a href="https://addons.mozilla.org/en-US/firefox/addon/icobench/" target="_blank" title="ICObench Firefox Widget">Firefox Widget</a></li>
+                                <li><a href="/benchy" target="_blank" title="Benchy">Benchy</a></li>
+                                <li><a href="/faq" title="FAQ">FAQ</a></li>
+                                <li><a href="/contact" title="Contact">Contact</a></li>
+                                <li><a href="/login" class="inline" title="Login">Login</a> / <a class="inline" href="/register" title="Register">Register</a></li>
+                            </ul>
+                        </div>
+                        <div class="col_5">
+                            <h4>For ICOs</h4>
+                            <ul>
+                                <li><a href="/publish" title="Publish new ICO">Publish new ICO</a></li>
+                                <li><a href="/ico-analyzer" title="ICO Analyzer">ICO Analyzer</a></li>
+                                <li><a href="/premium" title="Premium listing">Premium listing</a></li>
+                                <li><a href="/services" title="ICO Services">ICO Services</a></li>
+                                <li><a href="/widgets" title="Widgets">Widgets</a></li>
+                            </ul>
+                        </div>
+                        <div class="col_5">
+                            <h4>For all</h4>
+                            <ul>
+                                <li><a href="/icos" title="ICO listing">ICO listing</a></li>
+                                <li><a href="/people" title="People of Blockchain">People of Blockchain</a></li>
+                                <li><a href="/icos/bounty" title="ICO Bounty">ICO Bounty</a></li>
+                                <li><a href="/icos/whitelist" title="ICO Whitelist">ICO Whitelist</a></li>
+                                <li><a href="/agencies" title="ICO Agencies">Agencies</a></li>
+                                <li><a href="/exchanges" title="Exchanges">Exchanges</a></li>
+                                <li><a href="/experts" title="Experts">Experts</a></li>
+                                <li><a href="/calculator" title="ROI calculator">ROI calculator</a></li>
+                                <li><a href="/videos" title="ICO Show Time">ICO Show Time</a></li>
+                            </ul>
+                        </div>
+                        <div class="col_5">
+                            <h4>Network</h4>
+                            <ul>
+                                <li><a href="https://t.me/icobench" title="ICObench on Telegram" target="_blank">Telegram</a></li>
+                                <li><a href="https://www.twitter.com/ICObench" title="ICObench on Twitter" target="_blank">Twitter</a></li>
+                                <li><a href="https://www.facebook.com/ICObench" title="ICObench on Facebook" target="_blank">Facebook</a></li>
+                                <li><a href="https://medium.com/@ICObench" title="ICObench on Medium" target="_blank">Medium</a></li>
+                                <li><a href="https://bitcointalk.org/index.php?topic=2152184" title="ICObench on BitcoinTalk" target="_blank">BitcoinTalk</a></li>
+                                <li><a href="https://github.com/ICObench?tab=repositories" title="ICObench on GitHub" target="_blank">GitHub</a></li>
+                                <li><a href="https://www.linkedin.com/company/icobench/" title="ICObench on LinkedIn" target="_blank">LinkedIn</a></li>
+                                <li><a href="https://www.reddit.com/r/icobench/" title="ICObench on Reddit" target="_blank">Reddit</a></li>
+                            </ul>
+                        </div>
+                        <div class="col_5"><div class="newsletter"><div class="row"><div class="icon_newsletter"></div><h4>Newsletter</h4></div>
+                            <p>Don't miss it again. Get FREE regular updates on ICOs directly to your email.</p>
+                            <div class="input">
+                                <input type="text" id="subemail" placeholder="Your email" value="">
+                            </div>
+                            <div class="button_submit" onclick="subscribe();">Subscribe</div></div>
+                            <script>
+                                $("#subemail").on("keypress", function(e) {
+                                    var code = e.keyCode || e.which;
+                                    if(code==13 && $("#subemail").val() != ""){
+                                        subscribe();
+                                    }
+                                });
+                            
+                                function subscribe(){
+                                    $.post("/newsletter/subscribe.php", { subemail: $("#subemail").val() },function(data){
+                                        if(data!=""){
+                                            $(".newsletter").html(data);
+                                        }
+                                    });
+                                }
+                            </script>   </div>
+                        
+                    </div></div>
+                    <div class="footer_bottom ">
+                                        <div class="container-fluid">
+<div class="frame">
+                        <div class="col_1_3">
+                            <a href="/" class="logo" title="ICObench" style="color: white;">ICObench</a>
+                        </div>
+                        <div class="col_2_3">
+                            <b>ICObench</b> is an ICO rating platform supported by investors and financial experts.<br>
+                            © 2017 - 2018 All rights reserved
+                        </div>
+                        <div class="col_3_3 pull-right">
+                            <a href="/terms" title="Terms" style="color: white;">Terms</a> | <a href="/privacy" title="Privacy policy">Privacy policy</a> | <a href="/ratings" title="Rating methodology">Rating methodology</a>
+                        </div>
+                        </div>
+                    </div></div>
+               </div>
+                </footer>
+ {% block javascript %}
+ {% endblock %}
+
+</body>
+</html>

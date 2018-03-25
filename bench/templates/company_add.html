@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+	<div class="container " style="margin-bottom: 20px;margin-top: 20px;">
+		<div class="row">
+			<div class="col-md-12">
+			<form id="CompanyForm" action="{% url 'company_add' %}"
+				class="sky-form" method="POST">
+				{% csrf_token %}
+				<div><span class="error">                 
+	  			{{form.errors}}</span></div>
+				<h4>Add Client</h4>
+				<input type="hidden" name="saveType" value="{{save_type_status}}" id="saveType_id">
+				{{form.as_p}}
+				<footer>
+					<button type="submit" class="btn btn-primary" id='submit'>Save</button>
+			
+					<a class="btn btn-danger" href="#" style="color:white !important">Cancel</a>
+				</footer>
+			</form>
+		</div>
+	</div>
+	</div>
+
+{% endblock content %}

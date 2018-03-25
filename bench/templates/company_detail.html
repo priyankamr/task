@@ -1,0 +1,255 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+.buttonclass{
+    background-color: white;
+    color: black;
+}
+.buttonclass:hover {
+    background-color: slateblue;
+    color: white;
+}
+</style>
+<!--row-->
+<div class="row">
+  <div class="col-md-8">
+   <div class="row">
+     <div class="col-md-2">
+        <img src="{{ company.logo.url }}" style="width: 18px;height: 25px;margin-top: 23px;margin-left: 130px;">
+       
+       <img src="{{ company.logo.url }}" style="width: 75px;height: 58px;margin-top: -25px;margin-left:44px;">
+      </div>
+      <div class="col-md-10">
+      <h2><a href="/premiem" title="" class="" style="margin-left: 10px;">&nbsp;&nbsp;&nbsp;</a>{{ company.name }}</h2>
+      <h3 style="margin-left: 10px;margin-top: -6px;">{{ company.title }}</h3>
+      </div>
+      </div>
+<!--./row-->
+<!--description-->
+<div class="row">
+<div class="textclass col-md-offset-1">
+<p class="text-justify" style="font-size: 12px;">{{ company.description }}</p>
+<!--./description-->
+</div>
+</div>
+<!--category button-->
+<div class="col-md-offset-1" style="padding-top: 20px;padding-bottom: 20px;">
+  {% for category in company.category.all %}
+
+  <button type="button" class="btn btn-default btn-xs buttonclass">{{ category.category_name }}</button>
+  {% endfor %}
+
+</div>
+<!--./category button-->
+
+<!--video_upload-->
+<div class="row">
+<div class="container col-md-offset-1">
+<div class="col-md-8">
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="{{ company.video_file.url }}"></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<!--./video_upload-->
+
+<!--tabs-->
+<div class="col-md-offset-1"  style="margin-top: 30px;">
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab" style="">Home</a></li>
+    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
+    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
+    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="home">
+        <p style="margin-top:30px;font-size: 11px;">About skychain
+We present you a Skychain project. Skychain is an infrastructure blockchain project aimed to host, train and use artificial neural networks (ANNs) by market participants.
+
+First years of Skychain development will be devoted only to medicine to help doctors and patients have accurate diagnoses using this system.
+
+Skychain is a "sharing economy" project, it means that each member of the Skychain ecosystem will provide his resources and thus create a product that is ahead of any competitors. In its turn, the system will reward each participant with high benefits.
+
+Skychain is a project that will "uberize" artificial neural networks, but with developers of individual ANNs instead of taxi drivers, consumers of ANNs (doctors and patients) instead of passengers and computers and server of miners instead of cars. In the future, Skychain may be used for building, fast distributed training and further use of a wide range of neural networks not only in medicine.
+
+The way to achieve this goal is to create the best open infrastructure that will accumulate the resources of the majority of participants of this industry and surpass any closed corporate produ</p>
+<p style="font-size: 11px;">IBM estimates the artificial intelligence market in the sphere of medicine at $200 billion a year in a few years. The goal of Skychain is to take control over 70% of this market!
+
+The way to achieve this goal is to create the best open infrastructure that will accumulate the resources of the majority of participants of this industry and surpass any closed corporate produ</p>
+<p style="font-size: 11px;">IBM estimates the artificial intelligence market in the sphere of medicine at $200 billion a year in a few years. The goal of Skychain is to take control over 70% of this market!
+
+The way to achieve this goal is to create the best open infrastructure that will accumulate the resources of the majority of participants of this industry and surpass any closed corporate produ</p>
+<p style="font-size: 11px;">IBM estimates the artificial intelligence market in the sphere of medicine at $200 billion a year in a few years. The goal of Skychain is to take control over 70% of this market!
+
+The way to achieve this goal is to create the best open infrastructure that will accumulate the resources of the majority of participants of this industry and surpass any closed corporate produ</p>
+<p style="font-size: 11px;">IBM estimates the artificial intelligence market in the sphere of medicine at $200 billion a year in a few years. The goal of Skychain is to take control over 70% of this market!
+
+The way to achieve this goal is to create the best open infrastructure that will accumulate the resources of the majority of participants of this industry and surpass any closed corporate produ</p>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="profile"> <p style="margin-top:30px;font-size: 11px;">About skychain
+We present you a Skychain project. Skychain is an infrastructure blockchain project aimed to host, train and use artificial neural networks (ANNs) by market participants.
+
+First years of Skychain development will be devoted only to medicine to help doctors and patients have accurate diagnoses using this system.
+
+Skychain is a "sharing economy" project, it means that each member of the Skychain ecosystem will provide his resources and thus create a product that is ahead of any competitors. In its turn, the system will reward each participant with high benefits.
+
+Skychain is a project that will "uberize" artificial neural networks, but with developers of individual ANNs instead of taxi drivers, consumers of ANNs (doctors and patients) instead of passengers and computers and server of miners instead of cars. In the future, Skychain may be used for building, fast distributed training and further use of a wide range of neural networks not only in medicine.</p></div>
+    <div role="tabpanel" class="tab-pane" id="messages"> <p style="margin-top:30px;font-size: 11px;">About skychain
+We present you a Skychain project. Skychain is an infrastructure blockchain project aimed to host, train and use artificial neural networks (ANNs) by market participants.
+
+First years of Skychain development will be devoted only to medicine to help doctors and patients have accurate diagnoses using this system.
+
+Skychain is a "sharing economy" project, it means that each member of the Skychain ecosystem will provide his resources and thus create a product that is ahead of any competitors. In its turn, the system will reward each participant with high benefits.
+
+Skychain is a project that will "uberize" artificial neural networks, but with developers of individual ANNs instead of taxi drivers, consumers of ANNs (doctors and patients) instead of passengers and computers and server of miners instead of cars. In the future, Skychain may be used for building, fast distributed training and further use of a wide range of neural networks not only in medicine.</p></div>
+    <div role="tabpanel" class="tab-pane" id="settings"> <p style="margin-top:30px;font-size: 11px;">About skychain
+We present you a Skychain project. Skychain is an infrastructure blockchain project aimed to host, train and use artificial neural networks (ANNs) by market participants.
+
+First years of Skychain development will be devoted only to medicine to help doctors and patients have accurate diagnoses using this system.
+
+Skychain is a "sharing economy" project, it means that each member of the Skychain ecosystem will provide his resources and thus create a product that is ahead of any competitors. In its turn, the system will reward each participant with high benefits.
+
+Skychain is a project that will "uberize" artificial neural networks, but with developers of individual ANNs instead of taxi drivers, consumers of ANNs (doctors and patients) instead of passengers and computers and server of miners instead of cars. In the future, Skychain may be used for building, fast distributed training and further use of a wide range of neural networks not only in medicine.</p></div>
+  </div>
+
+</div>
+</div>
+<!--./tabs-->
+
+<!--right sidebar-->
+<div class="col-md-4">
+<div class="well" style="height: 200px;font-size: 12px;">
+<div class="col-md-12 ">
+<div class="text-center" style="padding-top: 10px;padding-bottom: 10px;">
+42 Experts Ratings<br/>
+<span>4.4</span>
+</div>
+</div>
+<div class="col-md-12 " style="margin-left: 35px;">
+<div class="col-md-3">
+<span>4.4</span>
+ico profile
+</div>
+<div class="col-md-2">
+<span>4.3</span>
+team
+</div>
+<div class="col-md-2">
+<span>4.5</span>
+vision
+</div>
+<div class="col-md-2">
+<span>4.1</span>
+product
+</div>
+</div>
+<div class="col-md-12">
+<div class="text-center" style="padding-top: 10px;padding-bottom: 10px;">
+<a href="#">view rating distribution</a>
+</div>
+</div>
+<!--./right sidebar-->
+</div><!--well-->
+
+<div class="well" style="height: 400px;font-size: 12px;">
+<div class="col-md-12 pull-right">
+<span>TIME</span>
+<h5>17 days 5 hours left</h5>
+<span>2018-02-26 - 2018-04-08</span><br/><br/>
+<div class="col-md-6">
+Token<br/>
+Price<br/>
+Platform<br/>
+Accepting<br/>
+Minimum investment<br/>
+Soft cap <br/>
+Hard cap <br/>
+Country<br/>
+</div>
+<div class="col-md-6">
+{{company.token.token_name}}<br/>
+{% if company.token.price %}
+1 {{company.token.token_name}} = {{company.token.price}} USD<br/>
+{% endif %}
+{% if company.token.platform %}
+{{company.token.platform}}<br/>
+{% endif %}
+{% if company.token.accepting %}
+{{ company.token.accepting }}<br/>
+{% endif %}
+{% if company.token.minimum_investment %}
+15{{ company.token.minimum_investment }} USD<br/>
+{% endif %}
+{% if company.token.soft_cap %}
+{{ company.token.soft_cap}} USD<br/>
+{% endif %}
+{% if company.token.hard_cap %}
+{{company.token.hard_cap}}<br/>
+{% endif %}
+{% if company.token.country %}
+{{company.token.country}}<br/>
+{% endif %}
+</div>
+</div>
+</div>
+<button type="button" class="btn btn-success btn-md btn-block">More On ICO</button>
+<button type="button" class="btn btn-primary btn-md btn-block">Bookmark</button>
+
+<div class="col-md-12" style="font-size: 12px;">
+<h4>ICO KYC Report</h4>
+<h5>2 members invited</h5>
+<div class="col-md-6">
+Gennady Popov<br/>
+Ivan Svistunov</br/>
+</div>
+<div class="col-md-6">
+Passed<br/>
+Passed</br>
+</div>
+<div class="col-md-6">
+</div>
+<div class="col-md-6">
+<a href="#">lead m,ore about kyc</a>
+</div>
+</div>
+<div class="col-md-12 text-center social-icons">
+ <i class="fa fa-facebook"></i>
+ <i class="fa fa-twitter"></i>
+ <i class="fa fa-linkedin"></i>
+ <i class="fa fa-instagram"></i>
+ <i class="fa fa-skype"></i>
+ <i class="fa fa-fw fa-yputube"></i>
+
+</div>
+<div class="col-md-12" style="font-size: 12px;">
+<div class="col-md-4" style="padding-top: 20px;">
+<!-- <img src=" " style="width:75px;height:56px;margin-top:-15px;">
+ --><img src=" " style="width:75px;height:56px;margin-top:-15px;">
+
+</div>
+<div class="col-md-8">
+<h4><b>Dmitry Machikhin</b></h4>
+<p>International Lawyer and entrepreneur, Blockchain business expert</p>
+</div>
+</div>
+<div class="col-md-12">
+<div class="review_box content_right legal_review well">
+<h5 class="voicolor">Short legal review</h5>
+<h6>Should learn it more deeply but for the first look it's all good!
+Order full legal review for 0.3 BTC</h6>
+  <button type="button" class="btn btn-default btn-sm butexsmall">Order full legal review for 0.3 BTC</button>
+
+</div>
+</div>
+<div class="pull-right lastdiv">
+<p>Missing or incorrect data?<a href="#">Let us know.</a></p>
+</div>
+</div><!--./col-md-4-->
+    <hr class="clearfix w-100 d-md-none">
+<!--footer-->
+{% endblock content %}
